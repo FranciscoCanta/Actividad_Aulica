@@ -8,6 +8,7 @@ public class Juego_de_cartas {
         
       baraja_Cartas baraja = new baraja_Cartas();
       
+      baraja.LlenarCartas();
         
     }
 

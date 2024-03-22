@@ -28,7 +28,9 @@ public class baraja_Cartas {
            }
        }
        System.out.println("estas son las cartas: ");
-       System.out.print(cartas);
+       for (int i = 0; i < 40; i++) {
+           System.out.println(" "+cartas.get(i));
+       }
    }
     
     
