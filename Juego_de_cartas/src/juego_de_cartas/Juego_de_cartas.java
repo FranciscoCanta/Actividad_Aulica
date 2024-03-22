@@ -16,6 +16,17 @@ public class Juego_de_cartas {
       
       baraja.cartasDisponibles();
       
+      try{
+          for (int i = 0; i < 41; i++) {
+           baraja.siguienteCarta(); 
+        }
+        }catch(IndexOutOfBoundsException e){
+            System.out.println("El mazo se ha quedado sin cartas");
+        }
+      
+        baraja.mostrarBarajas(); 
+        System.out.println("hola");
+      
     }
 
 }

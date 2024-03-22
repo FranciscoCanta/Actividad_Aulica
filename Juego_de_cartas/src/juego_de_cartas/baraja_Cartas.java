@@ -2,19 +2,20 @@ package juego_de_cartas;
 import static  java.lang.Math.random;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.LinkedList;
 import java.util.List;
 
 
 public class baraja_Cartas {
 
-    private List<Carta> cartas;
+    private LinkedList<Carta> cartas;
     private List<Carta> monton;
     //private List<Carta> cartas = new ArrayList<>();
     private int cantCartasEntregadas;
     //private List<Carta> monton = new ArrayList<>();
 
     public baraja_Cartas() {
-       cartas = new ArrayList<>();
+       cartas = new LinkedList<>();
        monton = new ArrayList<>();
        
        
@@ -88,8 +89,10 @@ public class baraja_Cartas {
         System.out.println("Cartas desordenadas:");
     }
     
-    public void siguienteCarta(){
-        
+    public Carta siguienteCarta () throws IndexOutOfBoundsException{
+        Carta ultimaCarta = cartas.get(cartas.size()-1);
+        cartas.removeLast();
+        return ultimaCarta;   
     }
     
     public void cartasDisponibles(){
