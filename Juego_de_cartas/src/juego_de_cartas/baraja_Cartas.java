@@ -1,6 +1,4 @@
 package juego_de_cartas;
-import static  java.lang.Math.random;
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
@@ -10,15 +8,10 @@ public class baraja_Cartas {
 
     private LinkedList<Carta> cartas;
     private List<Carta> monton;
-    //private List<Carta> cartas = new ArrayList<>();
-    private int cantCartasEntregadas;
-    //private List<Carta> monton = new ArrayList<>();
 
     public baraja_Cartas() {
        cartas = new LinkedList<>();
-       monton = new ArrayList<>();
-       
-       
+       monton = new LinkedList<>();
     }
    
    public void LlenarCartas(){
@@ -35,53 +28,6 @@ public class baraja_Cartas {
            System.out.println(" "+cartas.get(i));
        }
    }
-    
-    
-//    private String[] barajaCartas = new String[40];
-    
-//    public void llenarCartas(){
-//        for (int i = 0; i < 4; i++) {
-//            for (int j = 0; j < 10; j++) {
-//                switch (i) {
-//                    case 0:
-//                        if (j<7) {
-//                            String num = Integer.toString(j+1);
-//                            barajaCartas[j] = num + "Espada";
-//                        }else{
-//                            String num = Integer.toString(j+3);
-//                            barajaCartas[j] = num + "Espada";
-//                        }
-//                        break; 
-//                    case 1:
-//                        if (j!= 7 && j!=8) {
-//                            String num = Integer.toString(j+1);
-//                            barajaCartas[j] = num + "Oro";
-//                        }
-//                        break;
-//                    case 2: 
-//                        if (j!= 7 && j!=8) {
-//                            String num = Integer.toString(j+1);
-//                            barajaCartas[j] = num + "Basto";
-//                        }
-//                        break;
-//                    case 3:
-//                        if (j<7) {
-//                            String num = Integer.toString(j+1);
-//                            barajaCartas[j] = num + "copa";
-//                        }else{
-//                            String num = Integer.toString(j+3);
-//                            barajaCartas[j] = num + "copa";
-//                        }
-//                        break;
-//                    default:
-//                        throw new AssertionError();
-//                }
-//            }
-//        }
-//        for (int i = 0; i < 40; i++) {
-//            System.out.println(barajaCartas[i]);
-//        }
-//    }
     
     public void barajar(){
         
@@ -101,21 +47,36 @@ public class baraja_Cartas {
          
     }
     
-    public void darCartas(){
-        
+    public LinkedList<Carta> darCartas(int cant){
+        LinkedList<Carta> cartasDadas = new LinkedList<>();
+        if (cant <= cartas.size()) {
+           for (int i = 0; i < cant; i++) {
+            cartasDadas.add(siguienteCarta());
+           } 
+        }else{
+            System.out.println("No hay suficientes cartas");
+        }
+        return cartasDadas;
+    }
+    
+    public void añadirMonton(Carta carta){
+        monton.add(carta);
+    }
+    
+    public void añadirMonton(LinkedList<Carta> cartas){
+        monton.addAll(cartas);
     }
     
     public void cartasMonton(){
-        
+        System.out.println("Cartas en el monton");
+        for (int i = 0; i < monton.size(); i++) {
+           System.out.println(" " + monton.get(i));
+        }
     }
     
-    public void mostrarBarajas(){
-        
-       for (int i = 0; i < 40; i++) {
+    public void mostrarBarajas(){ 
+       for (int i = 0; i < cartas.size(); i++) {
            System.out.println(" "+cartas.get(i));
-       }
-        
-    }
-    
-    
+       }   
+    }  
 }
