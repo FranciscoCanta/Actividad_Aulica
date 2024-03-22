@@ -93,7 +93,9 @@ public class baraja_Cartas {
     }
     
     public void cartasDisponibles(){
-        
+         
+         System.out.println("Las cartas disponibles son: " + cartas.size());
+         
     }
     
     public void darCartas(){

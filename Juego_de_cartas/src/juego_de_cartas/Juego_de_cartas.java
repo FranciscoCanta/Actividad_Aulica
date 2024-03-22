@@ -14,6 +14,8 @@ public class Juego_de_cartas {
       
       baraja.mostrarBarajas();
       
+      baraja.cartasDisponibles();
+      
     }
 
 }
