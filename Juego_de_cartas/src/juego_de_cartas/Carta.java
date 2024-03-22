@@ -3,12 +3,14 @@ package juego_de_cartas;
 
 
 public class Carta {
-    private String palo;
     private int numero;
+    private String palo;
+    
 
-    public Carta(String palo, int numero) {
-        this.palo = palo;
+    public Carta(int numero, String palo) {
         this.numero = numero;
+        this.palo = palo;
+        
     }
 
     public String getPalo() {
@@ -29,7 +31,7 @@ public class Carta {
 
     @Override
     public String toString() {
-        return "Carta{" + "palo=" + palo + ", numero=" + numero + '}';
+      return numero + " de " + palo;
     }
     
     

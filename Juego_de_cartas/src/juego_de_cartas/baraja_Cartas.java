@@ -5,14 +5,31 @@ import java.util.List;
 
 public class baraja_Cartas {
 
-    private List<Carta> cartas = new ArrayList<>();
+    private List<Carta> cartas;
+    private List<Carta> monton;
+    //private List<Carta> cartas = new ArrayList<>();
     private int cantCartasEntregadas;
-    private List<Carta> monton = new ArrayList<>();
+    //private List<Carta> monton = new ArrayList<>();
 
     public baraja_Cartas() {
-        
+       cartas = new ArrayList<>();
+       monton = new ArrayList<>();
+       
+       
     }
-    
+   
+   public void LlenarCartas(){
+       String[] palos = {"Espada", "Oro", "Copa", "Basto"};
+       for( String palo : palos){
+           for(int numero = 1; numero<=12; numero++ ){
+               if(numero != 8 && numero != 9){
+                   cartas.add(new Carta(numero, palo));
+               }
+           }
+       }
+       System.out.println("estas son las cartas: ");
+       System.out.print(cartas);
+   }
     
     
 //    private String[] barajaCartas = new String[40];
