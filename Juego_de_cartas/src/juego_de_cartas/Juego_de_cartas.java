@@ -10,6 +10,10 @@ public class Juego_de_cartas {
       
       baraja.LlenarCartas();
         
+      baraja.barajar();
+      
+      baraja.mostrarBarajas();
+      
     }
 
 }

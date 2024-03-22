@@ -1,5 +1,7 @@
 package juego_de_cartas;
+import static  java.lang.Math.random;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -82,6 +84,8 @@ public class baraja_Cartas {
     
     public void barajar(){
         
+        Collections.shuffle(cartas);
+        System.out.println("Cartas desordenadas:");
     }
     
     public void siguienteCarta(){
@@ -101,6 +105,10 @@ public class baraja_Cartas {
     }
     
     public void mostrarBarajas(){
+        
+       for (int i = 0; i < 40; i++) {
+           System.out.println(" "+cartas.get(i));
+       }
         
     }
     
